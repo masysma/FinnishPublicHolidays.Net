@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
+
+        <AssemblyName>FinnishPublicHolidays</AssemblyName>
+        <AssemblyTitle>FinnishPublicHolidays</AssemblyTitle>
+        <RootNamespace>FinnishPublicHolidays</RootNamespace>
+        <PackageId>FinnishPublicHolidays</PackageId>
+        <Product>FinnishPublicHolidays</Product>
+
+        <Authors>Matti Sysmäläinen</Authors>
+        <Copyright>Matti Sysmäläinen, 2021</Copyright>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+        <Description>.NET implementation of logic determining whether given data is a public holiday in Finland.</Description>
+        <Summary>Finnish public holiday parsing</Summary>
+        <PackageTags></PackageTags>
+
+        <PackageReleaseNotes>1.0.0 Initial version</PackageReleaseNotes>
+        <FileVersion>1.0.0.0</FileVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <Version>1.0.0</Version>
+        <PackageLicenseUrl>https://opensource.org/licenses/EPL-1.0</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/masysma/FinnishPublicHolidays.Net</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/masysma/FinnishPublicHolidays.Net.git</RepositoryUrl>
+        <RepositoryType>GIT</RepositoryType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Holidays.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Holidays.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Holidays.resx">
+        <SubType>Designer</SubType>
+        <LastGenOutput>Holidays.Designer.cs</LastGenOutput>
+        <Generator>PublicResXFileCodeGenerator</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Holidays.fi.resx">
+        <Generator></Generator>
+      </EmbeddedResource>
+    </ItemGroup>
+
+</Project>
