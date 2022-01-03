@@ -2,6 +2,23 @@
 
 .NET implementation of Finnish public holiday determination logic.
 
+Implementation can determine the following (Finnish) public holidays:
+- All Saints' Day (pyhäinpäivä)
+- Ascension Day (helatorstai)
+- Boxing Day (tapaninpäivä)
+- Christmas Day (joulupäivä)
+- Christmas Eve (jouluaatto)
+- Easter (pääsiäispäivä)
+- Easter Sunday (2. pääsiäispäivä)
+- Epiphany (loppiainen)
+- First Of May (vapunpäivä)
+- GoodFriday (pitkäperjantai)
+- Indepencence Day (itsenäisyyspäivä)
+- Midsummer Day (juhannuspäivä)
+- Midsummer Eve (juhannusaatto)
+- New Years Day (uudenvuodenpäivä)
+- Pentecost (helluntai)
+
 # Getting Started
 
 You can install the library from nuget.org.
