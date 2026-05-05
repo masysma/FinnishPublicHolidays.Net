@@ -19,6 +19,12 @@ namespace FinnishPublicHolidays
             return datetimeOffset.LocalDateTime.GetHoliday();
         }
 
+        public static DateTimeOffset GetNextWorkday(this DateTimeOffset datetimeOffset)
+        {
+            var nextWorkday = FinnishHolidayLogic.GetNextWorkday(datetimeOffset.LocalDateTime);
+            return new DateTimeOffset(nextWorkday, datetimeOffset.Offset);
+        }
+
 
     }
 }

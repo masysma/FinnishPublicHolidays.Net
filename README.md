@@ -44,6 +44,9 @@ Checks can be applied via extension methods (available for DateTime and DateTime
 	bool isWorkday = new DateTime(2022, 1, 2).IsWorkDay();  // Sunday
 	// isWorkday: false 
 
+	var christmasEve = new DateTime(2026, 12, 24, 10, 0, 0);
+    var nextworkday = original.GetNextWorkday();  // Monday the 28th of December
+
 For more usage examples, please see test methods from source code for reference.
 
 # Contribute
@@ -52,6 +55,6 @@ If you notice an error or would like to contribute, please feel free make pull r
 
 ## License
 
-Copyright &copy; 2021 Matti Sysmäläinen
+Copyright &copy; 2021-2026 Matti Sysmäläinen
 
 Distributed under the Eclipse Public License.

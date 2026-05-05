@@ -69,7 +69,7 @@ namespace FinnishPublicHolidays
                             return new Holiday(date, Holidays.IndepencenceDay);
                         case 24:
                             return new Holiday(date, Holidays.ChristmasEve);
-                        case 25:
+                        case 25:    
                             return new Holiday(date, Holidays.ChristmasDay);
                         case 26:
                             return new Holiday(date, Holidays.BoxingDay);
@@ -86,8 +86,8 @@ namespace FinnishPublicHolidays
             // Midsummer related holidays need to determined if month is June
             if (date.Month == 6)
             {
-                var tempDate = new DateTime(date.Year, 6, 19);
-
+                var tempDate = new DateTime(date.Year, 6, 19, 0, 0, 0, DateTimeKind.Unspecified);
+                            
                 var holiday = GetHolidayForNextGivenWeekday(tempDate, DayOfWeek.Friday, Holidays.MidsummerEve);
                 if (holiday.IsDate(date))
                 {
@@ -106,7 +106,7 @@ namespace FinnishPublicHolidays
             // All Saints' day needs to checked only in October and November
             if (date.Month == 10 || date.Month == 11)
             {
-                var tempDate = new DateTime(date.Year, 10, 31);
+                var tempDate = new DateTime(date.Year, 10, 31, 0, 0, 0, DateTimeKind.Unspecified);
 
                 var holiday = GetHolidayForNextGivenWeekday(tempDate, DayOfWeek.Saturday, Holidays.AllSaintsDay);
                 if (holiday.IsDate(date))
@@ -174,7 +174,7 @@ namespace FinnishPublicHolidays
                     }
                 }
 
-                var easter = new Holiday(new DateTime(date.Year, easterMonth, easterDay), Holidays.Easter);
+                var easter = new Holiday(new DateTime(date.Year, easterMonth, easterDay, 0, 0, 0, DateTimeKind.Unspecified), Holidays.Easter);
                 if (easter.IsDate(date))
                 {
                     return easter;
@@ -206,6 +206,16 @@ namespace FinnishPublicHolidays
             }
 
             return null;
+        }
+
+        public static DateTime GetNextWorkday(DateTime datetime)
+        {
+            while (!datetime.IsWorkDay())
+            {
+                datetime = datetime.AddDays(1);
+            }
+
+            return datetime;
         }
     }
 }

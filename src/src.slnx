@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FinnishPublicHolidays/FinnishPublicHolidays.csproj" />
+  <Project Path="FinnishPublicHolidaysTests/FinnishPublicHolidays.Tests.csproj" />
+</Solution>

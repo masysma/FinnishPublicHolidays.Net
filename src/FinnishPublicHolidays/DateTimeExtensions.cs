@@ -24,6 +24,9 @@ namespace FinnishPublicHolidays
             return FinnishHolidayLogic.GetHoliday(date);
         }
 
-
+        public static DateTime GetNextWorkday(this DateTime date)
+        {
+            return FinnishHolidayLogic.GetNextWorkday(date);
+        }
     }
 }
